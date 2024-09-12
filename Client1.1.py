@@ -20,12 +20,6 @@ def handlering(socket: socket.socket):
     while True:
         data = client.recvfrom(1024)
         print(data[0].decode())
-        
-def user_input(socket: socket.socket):
-    while True:
-        message = input()
-        if message:
-            client.sendto(f"**SEND|{message}".encode(), server_address)
 
 def send_file(file_path):
     if os.path.exists(file_path):
